@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="pic1" src="Cait.png" height="100" width="600" onclick="changeImage1()" style="box-shadow: limegreen 4px 4px 9px;"/><br>
+<img id="pic2" src="Cait1.png" height="79" width="600" onclick="changeImage2()" style="box-shadow: limegreen 4px 4px 9px;"/><br>
+<img id="pic3" src="Cait2.png" height="79" width="600" onclick="changeImage3()" style="box-shadow: limegreen 4px 4px 9px;"/>
+<script>
+    let count1 = 0;
+    let count2 = 1;
+    let count3 = 2;
+    let img1 = document.getElementById('pic1');
+    let img2 = document.getElementById('pic2');
+    let img3 = document.getElementById('pic3');
+    function changeImage1(){
+        count1++;
+        if (count1 == 1){
+            img1.src = 'Cait.png';
+        } else if (count1 == 2) {
+            img1.src = 'Kali.png';
+        } else {count1 = 0;
+         img1.src = 'Kat.png'
+        }
+        console.log('count1 -- ', count1)
+        checkShadow()
+    }
+    function changeImage2(){
+        count2++;
+        if (count2 ==1){
+            img2.src = 'Cait1.png';
+        } else if (count2 == 2) {
+            img2.src = 'Kali1.png';
+        } else {count2 = 0;
+        img2.src = 'Kat1.png'}
+        console.log('count2 -- ', count2)
+        checkShadow()
+    }
+    function changeImage3(){
+        count3++;
+        if (count3 ==1){
+            img3.src = 'Cait2.png';
+        } else if (count3 == 2) {
+            img3.src = 'Kali2.png';
+        } else {
+            count3 = 0;
+            img3.src = 'Kat2.png';
+        }
+        checkShadow()
+    }
+    function checkShadow(){
+        if (count1 == count2 && count2 == count3){
+            img1.style.boxShadow='limegreen 4px 4px 9px';
+            img2.style.boxShadow='limegreen 4px 4px 9px';
+            img3.style.boxShadow='limegreen 4px 4px 9px';
+        } else {
+            img1.style.boxShadow='red 4px 4px 9px';
+            img2.style.boxShadow='red 4px 4px 9px';
+            img3.style.boxShadow='red 4px 4px 9px';
+        }
+    }
+
+</script>
+</body>
+</html>
